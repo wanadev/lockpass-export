@@ -84,7 +84,7 @@ def extract_zip_to_folder(
         z.extractall(output_folder, pwd=zip_password)
 
 
-def genrate_password(length: int = 64) -> str:
+def generate_password(length: int = 64) -> str:
     return secrets.token_urlsafe(length)
 
 
@@ -138,7 +138,7 @@ def main(args: list = sys.argv[1:]) -> None:
     )
 
     params = parser.parse_args(args)
-    zip_password = genrate_password()
+    zip_password = generate_password()
 
     export_url = lockself_api_generate_export_link(
         params.url,
