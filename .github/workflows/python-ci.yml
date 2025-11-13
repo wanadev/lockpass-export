@@ -1,0 +1,30 @@
+name: "Python Lint"
+
+on: [push, pull_request]
+
+jobs:
+
+  lint:
+
+    name: "Lint"
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: "Checkout the repository"
+        uses: actions/checkout@v5
+        with:
+          submodules: true
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: "Install Python dependencies"
+        run: |
+          pip install nox
+
+      - name: "Lint with flake8 and Black"
+        run: |
+          python3 -m nox --session lint

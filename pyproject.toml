@@ -1,0 +1,48 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "lockpass-export"
+version = "0.0.0"
+authors = [
+    {name = "Wanadev"},
+]
+description = "CLI tool to export LockSelf/LockPass shared passwords"
+readme = "README.rst"
+keywords = ["lockself", "lockpass", "password", "export", "exporter", "cli"]
+license = "GPL-3.0-or-later"
+license-files = ["COPYING"]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "nox",
+    "flit",
+    "black",
+    "flake8",
+    "flake8-pyproject",
+    "validate-pyproject",
+]
+
+[project.scripts]
+lockpass-export = "lockpass_export:main"
+
+[project.urls]
+source = "https://github.com/wanadev/lockpass-export"
+documentation = "https://github.com/wanadev/lockpass-export/blob/master/README.rst"
+changelog = "https://github.com/wanadev/lockpass-export?tab=readme-ov-file#changelog"
+issues = "https://github.com/wanadev/lockpass-export/issues"
+chat = "https://discord.gg/BmUkEdMuFp"
+
+[tool.black]
+target-version = ["py310"]
+
+[tool.flake8]
+ignore = [
+    # ↓↓ Black handles that its way... :)
+    "W503",  # line break before binary operator
+    "E501",  # line too long (> 79 characters)
+]
+
+

@@ -1,0 +1,6 @@
+dist/
+build/
+*.pyc
+__bak__/
+__env__/
+.nox/
