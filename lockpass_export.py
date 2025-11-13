@@ -3,8 +3,11 @@
 import sys
 import json
 import argparse
+import os
+import typing
 import urllib.parse
 import urllib.request
+import zipfile
 
 
 __application_name__ = "LockPass Export"
@@ -67,6 +70,15 @@ def lockself_api_download_zip(export_url: str) -> bytes:
         raise Exception("API returned an error (HTTP status code: %i)" % response.code)
 
     return response.read()
+
+
+def extract_zip_to_folder(
+    zip_file: typing.BinaryIO,
+    zip_password: bytes,
+    output_folder: str | os.PathLike,
+) -> None:
+    with zipfile.ZipFile(zip_file) as z:
+        z.extractall(output_folder, pwd=zip_password)
 
 
 def main(args: list = sys.argv[1:]) -> None:
