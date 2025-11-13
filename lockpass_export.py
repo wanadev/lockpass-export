@@ -40,9 +40,7 @@ def lockself_api_generate_export_link(
     response = urllib.request.urlopen(request)
 
     if response.code != 200:
-        raise Exception(
-            "API returned an error (HTTP status code: %i)" % response.code
-        )
+        raise Exception("API returned an error (HTTP status code: %i)" % response.code)
 
     data = json.loads(response.read())
 
