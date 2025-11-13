@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
-import sys
-import json
 import argparse
+import io
+import json
 import os
+import pathlib
+import secrets
+import sys
 import typing
 import urllib.parse
 import urllib.request
@@ -81,6 +84,10 @@ def extract_zip_to_folder(
         z.extractall(output_folder, pwd=zip_password)
 
 
+def genrate_password(length: int = 64) -> str:
+    return secrets.token_urlsafe(length)
+
+
 def main(args: list = sys.argv[1:]) -> None:
     parser = argparse.ArgumentParser(
         description="CLI tool to export LockSelf/LockPass shared passwords",
@@ -131,8 +138,23 @@ def main(args: list = sys.argv[1:]) -> None:
     )
 
     params = parser.parse_args(args)
+    zip_password = genrate_password()
 
-    print(params)  # FIXME
+    export_url = lockself_api_generate_export_link(
+        params.url,
+        params.auth_token,
+        params.ls_token,
+        params.organisation_id,
+        zip_password,
+    )
+
+    export_zip_bytes = lockself_api_download_zip(export_url)
+    export_zip_io = io.BytesIO(export_zip_bytes)
+
+    output_folder = pathlib.Path(params.FOLDER)
+    output_folder.mkdir(parents=True, exist_ok=True)
+
+    extract_zip_to_folder(export_zip_io, zip_password.encode("UTF-8"), output_folder)
 
 
 if __name__ == "__main__":
