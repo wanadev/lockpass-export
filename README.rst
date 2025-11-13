@@ -23,7 +23,8 @@ Usage
 
 ::
 
-    usage: lockpass_export.py [-h] -u URL -a AUTH_TOKEN -l LS_TOKEN [-i ORGANISATION_ID] FOLDER
+    usage: lockpass_export.py [-h] [-V] -u URL -a AUTH_TOKEN -l LS_TOKEN [-i ORGANISATION_ID]
+                              FOLDER
 
     CLI tool to export LockSelf/LockPass shared passwords
 
@@ -32,7 +33,8 @@ Usage
 
     options:
       -h, --help            show this help message and exit
-      -u, --url URL         URL of your LockPass instance (e.g. 'https://youcompany.lockself-
+      -V, --version         show program's version number and exit
+      -u, --url URL         URL of your LockPass instance (e.g. 'https://yourcompany.lockself-
                             cloud.com')
       -a, --auth-token AUTH_TOKEN
                             API Auth Token

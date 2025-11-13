@@ -7,6 +7,7 @@ import urllib.parse
 import urllib.request
 
 
+__application_name__ = "LockPass Export"
 __application_id__ = "org.wanadev.lockpass-export"
 __version__ = "0.0.0"
 
@@ -55,6 +56,12 @@ def main(args: list = sys.argv[1:]) -> None:
         description="CLI tool to export LockSelf/LockPass shared passwords",
     )
 
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version="%s v%s" % (__application_name__, __version__),
+    )
     parser.add_argument(
         "-u",
         "--url",
