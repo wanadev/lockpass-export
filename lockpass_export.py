@@ -12,7 +12,7 @@ def main(args=sys.argv[1:]):
     parser.add_argument(
         "-u",
         "--url",
-        help="URL of your LockPass instance (e.g. 'https://youcompany.lockself-cloud.com')",
+        help="URL of your LockPass instance (e.g. 'https://yourcompany.lockself-cloud.com')",
         type=str,
         required=True,
     )
@@ -36,9 +36,9 @@ def main(args=sys.argv[1:]):
     parser.add_argument(
         "-i",
         "--organisation-id",
-        help="ID of the organisation to export (default: 0)",
+        help="ID of the organisation to export (default: 1)",
         type=int,
-        default=0,
+        default=1,
     )
 
     parser.add_argument(

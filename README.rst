@@ -39,7 +39,7 @@ Usage
       -l, --ls-token LS_TOKEN
                             API LS Token
       -i, --organisation-id ORGANISATION_ID
-                            ID of the organisation to export (default: 0)
+                            ID of the organisation to export (default: 1)
 
 Example::
 
