@@ -51,6 +51,24 @@ def lockself_api_generate_export_link(
     return data["link"]
 
 
+def lockself_api_download_zip(export_url: str) -> bytes:
+    headers = {
+        "User-Agent": "/".join([__application_id__, __version__]),
+    }
+
+    request = urllib.request.Request(
+        export_url,
+        method="GET",
+        headers=headers,
+    )
+    response = urllib.request.urlopen(request)
+
+    if response.code != 200:
+        raise Exception("API returned an error (HTTP status code: %i)" % response.code)
+
+    return response.read()
+
+
 def main(args: list = sys.argv[1:]) -> None:
     parser = argparse.ArgumentParser(
         description="CLI tool to export LockSelf/LockPass shared passwords",
