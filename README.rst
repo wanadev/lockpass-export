@@ -105,3 +105,7 @@ Changelog
 * **[NEXT]** (changes on master, but not released yet):
 
   * Nothing yet ;)
+
+* **v1.0.0:**
+
+  * Initial release
