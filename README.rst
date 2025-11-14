@@ -1,6 +1,8 @@
 LockPass Export
 ===============
 
+|Github| |Discord| |PYPI Version| |Build Status| |Black| |License|
+
 LockPass Export is a CLI tool to export shared password from LockSelf's LockPass password manager.
 
 
@@ -109,3 +111,17 @@ Changelog
 * **v1.0.0:**
 
   * Initial release
+
+
+.. |Github| image:: https://img.shields.io/github/stars/wanadev/lockpass-export?label=Github&logo=github
+   :target: https://github.com/wanadev/lockpass-export
+.. |Discord| image:: https://img.shields.io/badge/chat-Discord-8c9eff?logo=discord&logoColor=ffffff
+   :target: https://discord.gg/BmUkEdMuFp
+.. |PYPI Version| image:: https://img.shields.io/pypi/v/lockpass-export.svg
+   :target: https://pypi.python.org/pypi/lockpass-export
+.. |Build Status| image:: https://github.com/wanadev/lockpass-export/actions/workflows/python-ci.yml/badge.svg
+   :target: https://github.com/wanadev/lockpass-export/actions
+.. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://black.readthedocs.io/en/stable/
+.. |License| image:: https://img.shields.io/pypi/l/lockpass-export.svg
+   :target: https://github.com/wanadev/saltimbanque/blob/master/COPYING
