@@ -38,15 +38,15 @@ To install from PyPI, be sure you have a complete Python 3 installation. On Debi
 
 Then create a virtualenv::
 
-    python3 -m venv /opt/lockpass-export.env
+    python3 -m venv /opt/lockpass-export.venv
 
 and install LockPass Export inside it::
 
-    /opt/lockpass-export.env/bin/pip install lockpass-export
+    /opt/lockpass-export.venv/bin/pip install lockpass-export
 
 To run the software, use the following command::
 
-    /opt/lockpass-export.env/bin/lockpass-export --help
+    /opt/lockpass-export.venv/bin/lockpass-export --help
 
 
 Usage
