@@ -12,7 +12,6 @@ import urllib.parse
 import urllib.request
 import zipfile
 
-
 __application_name__ = "LockPass Export"
 __application_id__ = "org.wanadev.lockpass-export"
 __version__ = "1.0.0"

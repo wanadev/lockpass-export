@@ -1,6 +1,5 @@
 import nox
 
-
 PYTHON_FILES = [
     "lockpass_export.py",
     "noxfile.py",
